@@ -22,6 +22,7 @@ public class Movin : MonoBehaviour
     private float timerCheck = 0;
 
     public float TimeTillSpwn = 5f;
+    public float TimeTillMwv = 5f;
     public float pos;
 
     public float food;
@@ -40,19 +41,22 @@ public class Movin : MonoBehaviour
     void Start()
     {
         people = GameObject.FindGameObjectsWithTag("Player").Length;
-         food = 0;
+        food = 0;
         population();
     }
 
        // Update is called once per frame
     void Update()
     {
-         if (energy >= 4){
+        //decide destination
+         if (energy >= 3){
             randoSpot();
         }      
+        //send to edge
         if (energy <= 2){
             spawn();
         }   
+        //energy countdown
         timer += Time.deltaTime;
         if (timer >= TimeTillSpwn && energy > 0)
         {
@@ -61,16 +65,20 @@ public class Movin : MonoBehaviour
             energy--;
                 
         }
-        if (energy == 0){
+        //food check
+        if (energy <= 0){
             parent();
         }
-        
+        //energy reset
         if (live == true){
             reset();
         }
 
          people = GameObject.FindGameObjectsWithTag("Player").Length;
          population();
+
+         // proximity functions
+         
        
     }
 
@@ -138,12 +146,20 @@ public class Movin : MonoBehaviour
                 population();
                 agent1.SetActive(false);
             }
+            // smallfood
+            if (food == 0){
+                live = true;
+                food = 0;
+                reset();
+            }
             //mucho food
          if (food >= 2){
              live = true;
+             food = 0;
              egg();    
              reset();        
             }
+            timerCheck = 0;
         }
     }
 
@@ -170,7 +186,13 @@ public class Movin : MonoBehaviour
 
     void reset()
     {
-        live = true;
+        timer += Time.deltaTime;
+        if (timer >= TimeTillMwv)
+        {
+            energy = 6;
+            live = false;
+        }
+        
     }
     void population()
     {
