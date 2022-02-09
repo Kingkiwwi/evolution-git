@@ -9,6 +9,7 @@ public class Foodspwn : MonoBehaviour
     private float timeg = 0;
     public float amount = 0;
     public float TimeTillSpwn = 0.75f;
+    public float energys = 0;
     void Update()
     {
         timer += Time.deltaTime;
@@ -20,6 +21,9 @@ public class Foodspwn : MonoBehaviour
                 
                 
         }
+
+        energys = GameObject.Find("Man").GetComponent<Movin>().energy;
+        GameObject.Find("Man").SetActive (true);
         
         
     }
