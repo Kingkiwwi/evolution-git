@@ -47,7 +47,7 @@ public class Movin : MonoBehaviour
        // Update is called once per frame
     void Update()
     {
-         if (energy >= 4){
+         if (energy >= 3){
             randoSpot();
         }      
         if (energy <= 2){
@@ -138,11 +138,16 @@ public class Movin : MonoBehaviour
                 population();
                 agent1.SetActive(false);
             }
+        if (food == 1){
+             live = true;    
+             food = 0;      
+            }
             //mucho food
          if (food >= 2){
              live = true;
              egg();    
-             reset();        
+             reset();  
+             food = 0;      
             }
         }
     }
@@ -170,7 +175,8 @@ public class Movin : MonoBehaviour
 
     void reset()
     {
-        live = true;
+        live = false;
+        energy = 4;
     }
     void population()
     {

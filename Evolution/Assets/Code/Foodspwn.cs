@@ -21,6 +21,7 @@ public class Foodspwn : MonoBehaviour
                 
         }
         
+        
     }
     void spwn () {
             
