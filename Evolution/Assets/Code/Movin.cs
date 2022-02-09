@@ -22,10 +22,6 @@ public class Movin : MonoBehaviour
     private float timerCheck = 0;
 
     public float TimeTillSpwn = 5f;
-<<<<<<< HEAD
-    public float TimeTillMwv = 5f;
-=======
->>>>>>> main
     public float pos;
 
     public float food;
@@ -44,35 +40,19 @@ public class Movin : MonoBehaviour
     void Start()
     {
         people = GameObject.FindGameObjectsWithTag("Player").Length;
-<<<<<<< HEAD
-        food = 0;
-=======
          food = 0;
->>>>>>> main
         population();
     }
 
        // Update is called once per frame
     void Update()
     {
-<<<<<<< HEAD
-        //decide destination
-         if (energy >= 3){
-            randoSpot();
-        }      
-        //send to edge
-        if (energy <= 2){
-            spawn();
-        }   
-        //energy countdown
-=======
          if (energy >= 4){
             randoSpot();
         }      
         if (energy <= 2){
             spawn();
         }   
->>>>>>> main
         timer += Time.deltaTime;
         if (timer >= TimeTillSpwn && energy > 0)
         {
@@ -81,30 +61,16 @@ public class Movin : MonoBehaviour
             energy--;
                 
         }
-<<<<<<< HEAD
-        //food check
-        if (energy <= 0){
-            parent();
-        }
-        //energy reset
-=======
         if (energy == 0){
             parent();
         }
         
->>>>>>> main
         if (live == true){
             reset();
         }
 
          people = GameObject.FindGameObjectsWithTag("Player").Length;
          population();
-<<<<<<< HEAD
-
-         // proximity functions
-         
-=======
->>>>>>> main
        
     }
 
@@ -172,29 +138,12 @@ public class Movin : MonoBehaviour
                 population();
                 agent1.SetActive(false);
             }
-<<<<<<< HEAD
-            // smallfood
-            if (food == 0){
-                live = true;
-                food = 0;
-                reset();
-            }
-            //mucho food
-         if (food >= 2){
-             live = true;
-             food = 0;
-             egg();    
-             reset();        
-            }
-            timerCheck = 0;
-=======
             //mucho food
          if (food >= 2){
              live = true;
              egg();    
              reset();        
             }
->>>>>>> main
         }
     }
 
@@ -221,17 +170,7 @@ public class Movin : MonoBehaviour
 
     void reset()
     {
-<<<<<<< HEAD
-        timer += Time.deltaTime;
-        if (timer >= TimeTillMwv)
-        {
-            energy = 6;
-            live = false;
-        }
-        
-=======
         live = true;
->>>>>>> main
     }
     void population()
     {

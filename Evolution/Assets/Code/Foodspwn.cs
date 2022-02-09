@@ -30,7 +30,3 @@ public class Foodspwn : MonoBehaviour
 
     }
 }
-<<<<<<< HEAD
-   
-=======
->>>>>>> main

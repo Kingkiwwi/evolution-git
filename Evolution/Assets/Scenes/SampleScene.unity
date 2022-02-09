@@ -152,11 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2874e127cb2926147824b7050453aebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  resolution: 25
-=======
   resolution: 95
->>>>>>> main
   agent: {fileID: 580257246}
   corner: 0
   pos: 0
@@ -1081,17 +1077,6 @@ PrefabInstance:
       propertyPath: countText
       value: 
       objectReference: {fileID: 2114460202}
-<<<<<<< HEAD
-    - target: {fileID: 8252443931088830081, guid: 7a1e32aaf31d2bf43be22192702fc103, type: 3}
-      propertyPath: TimeTillMwv
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8252443931088830081, guid: 7a1e32aaf31d2bf43be22192702fc103, type: 3}
-      propertyPath: TimeTillSpwn
-      value: 4
-      objectReference: {fileID: 0}
-=======
->>>>>>> main
     - target: {fileID: 8252443931088830086, guid: 7a1e32aaf31d2bf43be22192702fc103, type: 3}
       propertyPath: m_RootOrder
       value: 3
